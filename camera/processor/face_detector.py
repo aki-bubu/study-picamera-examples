@@ -17,7 +17,7 @@ from __future__ import print_function
 　　        self.face_cascade = cv2.CascadeClassifier('camera/processor/model/haarcascades/haarcascade_frontalface_default.xml')
 　　        if len(self.argvs) >= 2 and "eyes" in self.argvs:
 　　            self.eye_cascade = cv2.CascadeClassifier('camera/processor/model/haarcascades/haarcascade_eye.xml')
-+        # opencvの顔分類器(CascadeClassifier)をインスタンス化する
+　　        # opencvの顔分類器(CascadeClassifier)をインスタンス化する
  
      def __del__(self):
          self.vs.stop()
@@ -35,13 +35,13 @@ from __future__ import print_function
 　　                eyes = self.eye_cascade.detectMultiScale(roi_gray)
 　　                for (ex,ey,ew,eh) in eyes:
 　　                    cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-+        # opencvでframe(カラー画像)をグレースケールに変換
+　　        # opencvでframe(カラー画像)をグレースケールに変換
  
 　　        return frame
-+        # 上記でグレースケールに変換したものをインスタンス化した顔分類器の
-+        # detectMultiScaleメソッドで処理し、認識した顔の座標情報を取得する
-+        
-+        # 取得した座標情報を元に、cv2.rectangleを使ってframe上に
-+        # 顔の位置を描画する
-+
-+        # frameを戻り値として返す
+　　        # 上記でグレースケールに変換したものをインスタンス化した顔分類器の
+　　        # detectMultiScaleメソッドで処理し、認識した顔の座標情報を取得する
+　　        
+　　        # 取得した座標情報を元に、cv2.rectangleを使ってframe上に
+　　        # 顔の位置を描画する
+　　
+　　        # frameを戻り値として返す
