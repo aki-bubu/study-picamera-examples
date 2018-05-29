@@ -1,4 +1,4 @@
-　　from __future__ import print_function
+ from __future__ import print_function
  from imutils.video.pivideostream import PiVideoStream
 　　from imutils.object_detection import non_max_suppression
  import imutils
